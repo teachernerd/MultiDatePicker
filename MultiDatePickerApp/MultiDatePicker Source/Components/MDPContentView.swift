@@ -16,17 +16,17 @@ struct MDPContentView: View {
     let cellSize: CGFloat = 30
     
     let columns = [
-        GridItem(.fixed(30), spacing: 2),
-        GridItem(.fixed(30), spacing: 2),
-        GridItem(.fixed(30), spacing: 2),
-        GridItem(.fixed(30), spacing: 2),
-        GridItem(.fixed(30), spacing: 2),
-        GridItem(.fixed(30), spacing: 2),
-        GridItem(.fixed(30), spacing: 2)
+        GridItem(.fixed(30), spacing: 5),
+        GridItem(.fixed(30), spacing: 5),
+        GridItem(.fixed(30), spacing: 5),
+        GridItem(.fixed(30), spacing: 5),
+        GridItem(.fixed(30), spacing: 5),
+        GridItem(.fixed(30), spacing: 5),
+        GridItem(.fixed(30), spacing: 5)
     ]
     
     var body: some View {
-        LazyVGrid(columns: columns, spacing: 0) {
+        LazyVGrid(columns: columns, spacing: 5) {
             
             // Sun, Mon, etc.
             ForEach(0..<monthDataModel.dayNames.count, id: \.self) { index in

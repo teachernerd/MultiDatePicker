@@ -65,7 +65,7 @@ struct MDPMonthView: View {
                 .stroke(Color.accentColor, lineWidth: 1)
         )
         .padding()
-        .frame(width: 300, height: 300)
+        .frame(width: 300, height: 350)
     }
 }
 

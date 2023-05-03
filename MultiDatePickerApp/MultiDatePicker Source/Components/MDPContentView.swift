@@ -12,6 +12,7 @@ import SwiftUI
  */
 struct MDPContentView: View {
     @EnvironmentObject var monthDataModel: MDPModel
+    @Environment(\.sizeCategory) var sizeCategory
     
     let cellSize: CGFloat = 30
     
@@ -30,9 +31,21 @@ struct MDPContentView: View {
             
             // Sun, Mon, etc.
             ForEach(0..<monthDataModel.dayNames.count, id: \.self) { index in
-                Text(monthDataModel.dayNames[index].uppercased())
-                    .font(.caption)
-                    .foregroundColor(.gray)
+                
+                // If user has increased dynamic type size, truncate
+                // day names to just first letter
+                if sizeCategory > .large {
+                    Text(String(monthDataModel.dayNames[index].first!))
+                        .font(.caption)
+                        .foregroundColor(.gray)
+                }
+                
+                // Otherwise, show entire name
+                else {
+                    Text(monthDataModel.dayNames[index].uppercased())
+                        .font(.caption)
+                        .foregroundColor(.gray)
+                }
             }
             .padding(.bottom, 10)
             

@@ -56,7 +56,7 @@ struct MDPMonthYearPicker: View {
             .onChange(of: selectedYear, perform: { value in
                 self.action(self.selectedMonth + 1, value)
             })
-            .frame(width: 100)
+            .frame(width: 125)
             .clipped()
         }
     }

@@ -29,7 +29,7 @@ struct MDPDayView: View {
     // reverse color for selections or gray if not selectable
     private var textColor: Color {
         if dayOfMonth.isSelectable {
-            return monthDataModel.isSelected(dayOfMonth) ? Color.white : Color.black
+            return monthDataModel.isSelected(dayOfMonth) ? Color.white : Color.primary
         } else {
             return Color.gray
         }

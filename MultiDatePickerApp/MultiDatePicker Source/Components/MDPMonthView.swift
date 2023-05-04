@@ -58,7 +58,7 @@ struct MDPMonthView: View {
         }
         .background(
             RoundedRectangle(cornerRadius: 10)
-                .foregroundColor(.white)
+                .foregroundColor(Color(UIColor.systemBackground))
         )
         .overlay(
             RoundedRectangle(cornerRadius: 10)

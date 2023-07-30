@@ -58,7 +58,12 @@ struct MDPMonthView: View {
         }
         .background(
             RoundedRectangle(cornerRadius: 10)
+            #if os(iOS)
                 .foregroundColor(Color(UIColor.systemBackground))
+            #else
+                //TODO: Is this right? Does it even matter?
+                .foregroundColor(Color(NSColor.controlBackgroundColor))
+            #endif
         )
         .overlay(
             RoundedRectangle(cornerRadius: 10)
